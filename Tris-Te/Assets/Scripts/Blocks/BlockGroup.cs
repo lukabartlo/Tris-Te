@@ -1,9 +1,9 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BlockGroup : MonoBehaviour
 {
+    [SerializeField] private Sprite UIPreviewImage;
     [SerializeField] private List<SingleBlock> blocks;
 
     [SerializeField] private float fallingTime = 1;

@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3911c8bd6dcad004681fa3e480beca89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  UIPreviewImage: {fileID: 21300000, guid: da200228495c26746a0834b2de398402, type: 3}
   blocks:
   - {fileID: 619143974442556649}
   - {fileID: 8822876476975685738}

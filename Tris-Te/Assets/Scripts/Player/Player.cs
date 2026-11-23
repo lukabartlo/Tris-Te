@@ -3,17 +3,25 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    private Block currentBlock;
+    [SerializeField] private float blockSpeedModifier;
+    [SerializeField] private NextBlock nextBlock;
+    private BlockGroup currentBlock;
     private int score;
+
+    private void Start()
+    {
+        currentBlock = nextBlock.GetNextBlockGroup();
+        SingleBlock.PlacedEvent += OnSingleBlockPlaced;
+    }
 
     private void IncrementScore(int amount)
     {
         score += amount;
     }
 
-    private void OnBlockPlaced(Block newBlock)
+    private void OnSingleBlockPlaced(SingleBlock newBlock)
     {
-        currentBlock = newBlock;
+        currentBlock = nextBlock.GetNextBlockGroup();
     }
 
     public void MoveBlock(InputAction.CallbackContext context)
@@ -21,6 +29,7 @@ public class Player : MonoBehaviour
         if (context.started)
         {
             Vector2 inputValue = context.ReadValue<Vector2>();
+            currentBlock.Move(inputValue.x > 0);
         }
     }
 
@@ -29,6 +38,7 @@ public class Player : MonoBehaviour
         if (context.started)
         {
             Vector2 inputValue = context.ReadValue<Vector2>();
+            currentBlock.Rotate(inputValue.y > 0);
         }
     }
 
@@ -36,7 +46,11 @@ public class Player : MonoBehaviour
     {
         if (context.started)
         {
-
+            currentBlock.SetFallingSpeedModifier(blockSpeedModifier);
+        }
+        if (context.canceled)
+        {
+            currentBlock.SetFallingSpeedModifier(1);
         }
     }
 

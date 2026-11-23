@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlockGroup : MonoBehaviour
 {
-    [SerializeField] private List<SingleBlock> blocks;
+    [SerializeField] public List<SingleBlock> blocks;
 
     [SerializeField] private float fallingTime = 1;
     private bool  isPlaced = false;

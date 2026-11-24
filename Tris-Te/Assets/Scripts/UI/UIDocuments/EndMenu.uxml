@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="root" style="flex-grow: 1;">
+        <ui:Image name="Image" enabled="true" picking-mode="Position" source="project://database/Assets/Sprites/color.png?fileID=2800000&amp;guid=cdef4702b49d7314683c99417bc99832&amp;type=3#color" style="font-size: 14px; height: 1081px;">
+            <ui:Label text="Game Over" name="title" style="align-self: center; font-size: 150px; height: 192px; width: 828px; -unity-font-style: bold;"/>
+            <ui:GroupBox style="height: 868px;">
+                <ui:Button text="Restart" name="RestartBtn" style="align-self: center; top: 25%; width: 322px; height: 84px; font-size: 40px; margin-bottom: 92px;"/>
+                <ui:Button text="Main menu" name="MainMenuBtn" style="align-self: center; top: 25%; height: 96px; width: 320px; font-size: 40px;"/>
+            </ui:GroupBox>
+        </ui:Image>
+    </ui:VisualElement>
+</ui:UXML>

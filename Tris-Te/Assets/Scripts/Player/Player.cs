@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         currentBlock = nextBlock.GetNextBlockGroup();
-        SingleBlock.PlacedEvent += OnSingleBlockPlaced;
+        BlockGroup.GroupPlacedEvent += OnBlockPlaced;
     }
 
     private void IncrementScore(int amount)
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
         score += amount;
     }
 
-    private void OnSingleBlockPlaced(SingleBlock newBlock)
+    private void OnBlockPlaced(BlockGroup newBlock)
     {
         currentBlock = nextBlock.GetNextBlockGroup();
     }
@@ -56,6 +56,7 @@ public class Player : MonoBehaviour
 
     public void OpenPauseMenu(InputAction.CallbackContext context)
     {
+        Debug.LogWarning("This function has not yet been implemented.");
         if (context.started)
         {
 

@@ -13,7 +13,11 @@ public class SingleBlock : MonoBehaviour
     }
 
     public bool GetIsPlaced() { return isPlaced; }
-    public void SetIsPlaced(bool v) { isPlaced = v; }
+    public void SetIsPlaced(bool v) 
+    { 
+        if (!isPlaced) PlacedEvent?.Invoke(this);
+        isPlaced = v; 
+    }
 
     public void Fall()
     {

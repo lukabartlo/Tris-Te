@@ -12,6 +12,8 @@ public class BlockGroup : MonoBehaviour
     private float fallingTimeModifier = 1;
     private float timeKeeper = 0;
 
+    public static Action<BlockGroup> GroupPlacedEvent;
+
     #region DEBUG ONLY
     public bool DEBUGSpeedUp = false;
 
@@ -26,11 +28,13 @@ public class BlockGroup : MonoBehaviour
 
     private void CheckIfPlaced()
     {
-        foreach (SingleBlock b in blocks) 
-            if (b.GetIsPlaced()) isPlaced = true;
-
-        if (!isPlaced) return;
-        foreach (SingleBlock b in blocks) b.SetIsPlaced(isPlaced);
+        foreach (SingleBlock b in blocks)
+            if (b.GetIsPlaced())
+            {
+                if (!isPlaced) GroupPlacedEvent?.Invoke(this);
+                isPlaced = true;
+                foreach (SingleBlock block in blocks) block.SetIsPlaced(isPlaced);
+            }
     }
     private void Update()
     {

@@ -53,6 +53,7 @@ MonoBehaviour:
   - {fileID: 7627697403344262694}
   - {fileID: 8823560889922783543}
   - {fileID: 7660113998368030889}
+  blockSprite: {fileID: 21300000, guid: 1662d3f860ab15c4d8db697f0499cbfa, type: 3}
   fallingTime: 1
   DEBUGSpeedUp: 0
 --- !u!1001 &5219458415272120396

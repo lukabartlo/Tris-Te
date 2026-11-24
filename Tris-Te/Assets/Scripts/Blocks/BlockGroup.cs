@@ -5,6 +5,7 @@ using UnityEngine;
 public class BlockGroup : MonoBehaviour
 {
     [SerializeField] public List<SingleBlock> blocks;
+    [SerializeField] public Sprite blockSprite;
 
     [SerializeField] private float fallingTime = 1;
     private bool  isPlaced = false;

@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="root" style="flex-grow: 1;">
+        <ui:Label text="Tris-Te" name="title" style="align-self: center; font-size: 75px;"/>
+        <ui:Button text="Play" name="playBtn" style="align-self: center; top: 25%;"/>
+        <ui:Button text="Quit" name="quitBtn" style="align-self: center; top: 25%;"/>
+    </ui:VisualElement>
+</ui:UXML>

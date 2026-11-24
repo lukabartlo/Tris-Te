@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="root" style="flex-grow: 1;">
+        <ui:Image name="preview" style="align-self: flex-start;"/>
+        <ui:Label text="0" name="score" style="align-self: flex-end; font-size: 67px;"/>
+    </ui:VisualElement>
+</ui:UXML>

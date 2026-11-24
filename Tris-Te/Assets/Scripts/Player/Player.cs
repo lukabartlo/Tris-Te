@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     {
         currentBlock = nextBlock.GetNextBlockGroup();
         BlockGroup.GroupPlacedEvent += OnBlockPlaced;
+        GridManager.LineClearedEvent += IncrementScore;
     }
 
     private void IncrementScore(int amount)
